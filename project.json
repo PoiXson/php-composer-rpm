@@ -1,0 +1,6 @@
+{
+    "name": "php-composer",
+    "packaging": {
+        "type": "spec"
+    }
+}
