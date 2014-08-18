@@ -3,3 +3,4 @@ BUILDROOT
 RPMS
 SRPMS
 SOURCES/composer.phar
+SOURCES/version.txt

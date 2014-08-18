@@ -1,5 +1,5 @@
 # Set the version number to the date of the snapshot release
-%define _version %(php %{_sourcedir}/composer.phar --no-ansi --version | sed -E 's/.*([0-9]{4})-([0-9]{2})-([0-9]{2}).*/\\1\\2\\3/')
+%define _version %(cat %{_sourcedir}/version.txt)
 
 # Disable automatic dependency processing
 # (prevents endless loop if php-composer is already installed on buildsys)
@@ -13,6 +13,7 @@ Group: Development/Libraries
 License: MIT
 URL: http://getcomposer.org/
 Source0: composer.phar
+Source1: version.txt
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 
