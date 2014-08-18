@@ -1,12 +1,13 @@
-%define _release %(date +%s)
+# Set the version number to the date of the snapshot release
+%define _version %(php %{_sourcedir}/composer.phar --no-ansi --version | sed -E 's/.*([0-9]{4})-([0-9]{2})-([0-9]{2}).*/\\1\\2\\3/')
 
 # Disable automatic dependency processing
 # (prevents endless loop if php-composer is already installed on buildsys)
 AutoReqProv: no
 
 Name: php-composer
-Version: 0.0.1
-Release: %{_release}
+Version: %{_version}
+Release: 1
 Summary: Dependency Manager for PHP
 Group: Development/Libraries
 License: MIT
