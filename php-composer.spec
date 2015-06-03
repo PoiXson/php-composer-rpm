@@ -4,7 +4,7 @@ AutoReqProv: no
 
 Name: php-composer
 Version: 1.0.0.%{BUILD_NUMBER}
-Release: %{BUILD_NUMBER}
+Release: 2
 Summary: Dependency Manager for PHP
 Group: Development/Libraries
 License: MIT
