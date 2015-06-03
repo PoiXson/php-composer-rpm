@@ -1,6 +1,3 @@
-BUILD
-BUILDROOT
-RPMS
-SRPMS
-SOURCES/composer.phar
-SOURCES/version.txt
+rpmbuild-root/
+target/
+*.swp
