@@ -3,7 +3,7 @@
 AutoReqProv: no
 
 Name: php-composer
-Version: 1.0.0
+Version: 1.0.0.%{BUILD_NUMBER}
 Release: %{BUILD_NUMBER}
 Summary: Dependency Manager for PHP
 Group: Development/Libraries
