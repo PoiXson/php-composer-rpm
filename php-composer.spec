@@ -5,7 +5,7 @@ AutoReqProv: no
 Name: php-composer
 Version: 1.0.0.%{BUILD_NUMBER}
 Release: 2
-Summary: Dependency Manager for PHP
+Summary: Dependency Manager and build tools for PHP
 Group: Development/Libraries
 License: MIT
 URL: http://getcomposer.org/
@@ -42,7 +42,6 @@ project for you.
 
 
 %build
-# % {__mkdir} -p "${RPM_BUILD_ROOT}"
 
 
 
@@ -55,18 +54,19 @@ echo "Install.."
 %{__install} -d -m 755 \
 	"${RPM_BUILD_ROOT}%{prefix}" \
 		|| exit 1
-
-# download from getcomposer.org
-
+# download composer and box
 echo "Downloading.."
 pushd "${RPM_BUILD_ROOT}%{prefix}"
 	echo;echo
 	curl -Ss  https://getcomposer.org/installer | php
 	mv composer.phar composer || exit 1
 	echo;echo
+	curl -SsL https://box-project.github.io/box2/installer.php | php
+	mv box.phar      box      || exit 1
+	echo;echo
 popd
-%{__chmod} 555 "${RPM_BUILD_ROOT}%{prefix}/composer" \
-	|| exit 1
+%{__chmod} 555 "${RPM_BUILD_ROOT}%{prefix}/composer" || exit 1
+%{__chmod} 555 "${RPM_BUILD_ROOT}%{prefix}/box"      || exit 1
 
 
 
@@ -82,4 +82,4 @@ fi
 %files
 %defattr(-,root,root,-)
 %{prefix}/composer
-
+%{prefix}/box
