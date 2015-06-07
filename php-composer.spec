@@ -68,6 +68,11 @@ popd
 %{__chmod} 555 "${RPM_BUILD_ROOT}%{prefix}/composer" || exit 1
 %{__chmod} 555 "${RPM_BUILD_ROOT}%{prefix}/box"      || exit 1
 
+# TEMPORARY FIX FOR: https://github.com/composer/getcomposer.org/issues/82
+if [ -f "${RPM_BUILD_ROOT}%{prefix}/error_log" ]; then
+	rm -fv "${RPM_BUILD_ROOT}%{prefix}/error_log"
+fi
+
 
 
 %clean
