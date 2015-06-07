@@ -13,22 +13,22 @@ BuildArch: noarch
 Prefix: /usr/bin
 %define  _rpmfilename  %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm
 
-Requires: php-cli
-Requires: php-curl
-Requires: php-date
-Requires: php-hash
-Requires: php-iconv
-Requires: php-json
-Requires: php-libxml
-Requires: php-mbstring
-Requires: php-openssl
-Requires: php-pcre
-Requires: php-reflection
-Requires: php-simplexml
-Requires: php-spl
-Requires: php-tokenizer
-Requires: php-xsl
-Requires: php-zip
+#Requires: php-cli
+#Requires: php-curl
+#Requires: php-date
+#Requires: php-hash
+#Requires: php-iconv
+#Requires: php-json
+#Requires: php-libxml
+#Requires: php-mbstring
+#Requires: php-openssl
+#Requires: php-pcre
+#Requires: php-reflection
+#Requires: php-simplexml
+#Requires: php-spl
+#Requires: php-tokenizer
+#Requires: php-xsl
+#Requires: php-zip
 
 %description
 Composer is a tool for dependency management in PHP. It allows you to declare
