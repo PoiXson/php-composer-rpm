@@ -57,10 +57,14 @@ echo "Install.."
 		|| exit 1
 
 # download from getcomposer.org
-wget -O "${RPM_BUILD_ROOT}%{prefix}/composer" "https://getcomposer.org/composer.phar" \
-	|| exit 1
 
-# copy composer.phar
+echo "Downloading.."
+pushd "${RPM_BUILD_ROOT}%{prefix}"
+	echo;echo
+	curl -Ss  https://getcomposer.org/installer | php
+	mv composer.phar composer || exit 1
+	echo;echo
+popd
 %{__chmod} 555 "${RPM_BUILD_ROOT}%{prefix}/composer" \
 	|| exit 1
 
